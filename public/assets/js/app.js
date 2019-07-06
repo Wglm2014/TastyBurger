@@ -2,17 +2,21 @@ $(document).ready(function () {
     $("#enter-burger").on("submit", function (event) {
         event.preventDefault();
         const newBurger = $("#new-burger").val().trim();
+        if (newBurger !== "") {
+            data = {
+                burger_name: newBurger
+            };
+            $.post("/api/addburger", data,
+                function (response) {
+                    // Reload the page to get the updated list
+                    window.location.href = "/";
 
-        data = {
-            burger_name: newBurger
-        };
-        $.post("/api/addburger", data,
-            function (response) {
-                // Reload the page to get the updated list
-                window.location.href = "/";
-
-            }
-        );
+                }
+            );
+        } else {
+            $("#new-burger").attr("placeholder", "Please Enter Burger Name");
+            $("#new-burger").focus();
+        }
     });
 
     $(".update-deboured").on("click", function (event) {
@@ -36,7 +40,7 @@ $(document).ready(function () {
 
             });
         } else {
-            $(`#eater-name${id}`).val("please enter name");
+            $(`#eater-name${id}`).attr("placeholder", "please enter name");
             $(`#eater-name${id}`).focus();
         }
     });
