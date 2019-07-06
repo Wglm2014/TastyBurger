@@ -18,10 +18,11 @@
   },
   "production": {
     "username": "root",
-    "password": null,
+    "password": "RootRoot1973",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql",
+    "use_env_variable": "JAWSDB_URL",
     "operatorsAliases": false
   }
 }
