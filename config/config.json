@@ -19,7 +19,7 @@
   "production": {
     "username": "root",
     "password": "RootRoot1973",
-    "database": "database_production",
+    "database": "burgers_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "use_env_variable": "JAWSDB_URL",
