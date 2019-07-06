@@ -15,7 +15,7 @@
     <div class="col-4 text-left" id="burger">
         {{#each burgers}}
         {{#unless devoured}}
-        <h3 class="text-center text-primary bg-light border border-light">{{burger_name}}</h3>
+        <h3 class="text-center text-primary bg-light border border-light h-50">{{burger_name}}</h3>
 
         {{/unless}}
         {{/each}}
@@ -23,7 +23,7 @@
     <div class="col-2 text-center" id="burger">
         {{#each burgers}}
         {{#unless devoured}}
-        <input type="text" id="eater-name{{id}}" placeholder=" eater name" class="form-control text-center">
+        <input type="text" id="eater-name{{id}}" placeholder=" eater name" class="form-control text-center" required>
         <button id={{id}} type="button" class="btn btn-outline-primary btn-sm update-deboured">Devour It!</button>
         {{/unless}}
         {{/each}}
@@ -31,7 +31,8 @@
     <div class="col-4 text-left" id="eaten-burger">
         {{#each burgers}}
         {{#if devoured}}
-        <h4>{{burger_name}} devaured by {{Customer.name}}</h4>
+        <h4 class="text-center text-danger bg-light border border-light">{{burger_name}} devaured by {{Customer.name}}
+        </h4>
         {{/if}}
         {{/each}}
     </div>

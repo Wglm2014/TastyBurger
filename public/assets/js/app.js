@@ -18,9 +18,10 @@ $(document).ready(function () {
     $(".update-deboured").on("click", function (event) {
         event.preventDefault();
         const id = $(this).attr("id");
-        const dataCustomer = { name: $(`#eater-name${id}`).val() };
+        const name = $(`#eater-name${id}`).val().trim();
+        const dataCustomer = { name: name };
 
-        if (name !== null) {
+        if (name !== "") {
 
             $.post("/api/postcustomer", dataCustomer, function (result) {
                 const dataBurger = { id: id, CustomerId: result.id };
@@ -29,12 +30,14 @@ $(document).ready(function () {
                     data: dataBurger
                 }).then(
                     function (result) {
-                        location.reload();
+                        window.location.href = "/";
                     }
                 );
 
-
             });
+        } else {
+            $(`#eater-name${id}`).val("please enter name");
+            $(`#eater-name${id}`).focus();
         }
     });
 });
