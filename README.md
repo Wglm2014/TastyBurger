@@ -32,7 +32,7 @@ To deploy, simply add and commit your changes, and push to Heroku. As is, the NP
 * Visual Studio Code
 * Nodejs 
 * Express 
-* MongoDb and Mongoose. 
+* MySQL. 
 
 ### client side for the user interface.
 * Passport, passport-local, google-passport 
